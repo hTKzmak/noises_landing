@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap");
+
+$background-color: #101010;
+$dark-background: #090909;
+$main-font-color: #fff;
+$main-font-color50: #ffffff80;
+$main-font-color60: #ffffff99;
+$grey-font-color: #6e6e6e;
+
+@mixin button($bg-color, $color) {
+    background-color: $bg-color;
+    color: $color;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    height: 54px;
+    width: 178px;
+
+    border-radius: 8px;
+    border: none;
+
+    cursor: pointer;
+}
+
+%text {
+    h2 {
+        font-size: 23px;
+        color: $main-font-color50;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 16px;
+        }
+    }
+
+    h3 {
+        font-size: 38px;
+        margin-top: 22px;
+        margin-bottom: 16px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: $main-font-color60;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 12px;
+        }
+    }
+}
+
+%list {
+    ul {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        gap: 70px;
+        
+        li {
+            color: $main-font-color50;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 17px;
+
+            cursor: pointer;
+
+            &:hover {
+                color: $main-font-color;
+            }
+            
+            @media screen and (max-width: 1000px) {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            gap: 5px;
+            flex-direction: column;
+        }
+    }
+}
+
+html,
+body {
+    background-color: $background-color;
+    font-family: "Comfortaa", serif;
+    color: $main-font-color;
+    scroll-behavior: smooth;
+
+    .container {
+        margin: 0 auto;
+        padding: 40px 70px;
+    }
+
+    .logo {
+        font-family: "MuseoModerno", sans-serif;
+        font-weight: 500;
+        font-size: 34px;
+        text-transform: uppercase;
+    }
+
+    header {
+        padding: 40px 70px;
+        background-color: #000;
+        background-image: url("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2kybGJjejB1eDBoOGY5cTIwdmJ3a3QybmJqNmp2czJoNjd0ZGoyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pViWHLiQBA1q0/giphy.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: fixed;
+            left: 40px;
+            right: 40px;
+
+            z-index: 1;
+
+            @extend %list;
+
+            @media screen and (max-width: 1000px) {
+                right: none;
+                align-items: start;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            min-height: 85vh;
+
+            h1 {
+                font-size: 63px;
+                font-style: 600;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 32px;
+                }
+            }
+            p {
+                font-size: 20px;
+                font-weight: 500;
+                color: $main-font-color60;
+                margin-top: 17px;
+                letter-spacing: 10%;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 12px;
+                }
+            }
+
+            .options {
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                justify-content: center;
+                margin-top: 50px;
+
+                button {
+                    @include button(#fff, #000);
+                }
+                a {
+                    @include button(#121212, #fff);
+                }
+
+                button,
+                a {
+                    @media screen and (max-width: 1000px) {
+                        font-size: 14px;
+                    }
+                }
+
+                @media screen and (max-width: 1000px) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .about {
+        text-align: center;
+        margin-top: 125px;
+        margin-bottom: 125px;
+
+        @extend %text;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 812px;
+            margin: 0 auto;
+            padding: 0;
+            margin-top: 90px;
+
+            li {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 79px;
+
+                    @media screen and (max-width: 1000px) {
+                        width: 42px;
+                    }
+                }
+
+                span {
+                    margin-top: 15px;
+
+                    @media screen and (max-width: 1000px) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1000px) {
+                flex-wrap: wrap;
+                width: auto;
+                gap: 15px;
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .features {
+        background-color: $dark-background;
+
+        .feature-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 135px;
+            flex-direction: row;
+
+            margin-top: 135px;
+            margin-bottom: 135px;
+
+            &:nth-of-type(2),
+            &:nth-of-type(4) {
+                flex-direction: row-reverse;
+
+                @media screen and (max-width: 1000px) {
+                    flex-direction: column;
+                }
+            }
+
+            img {
+                border-radius: 8px;
+
+                @media screen and (max-width: 1000px) {
+                    max-width: 400px;
+                }
+            }
+
+            .feature-text {
+                @extend %text;
+                width: 472px;
+
+                @media screen and (max-width: 1000px) {
+                    width: auto;
+                }
+            }
+
+            @media screen and (max-width: 1000px) {
+                flex-direction: column;
+                gap: 50px;
+                align-items: unset;
+            }
+        }
+    }
+
+    footer {
+        .call-to-action {
+            text-align: center;
+            margin-top: 150px;
+            margin-bottom: 150px;
+
+            h1 {
+                font-size: 47px;
+                margin-bottom: 55px;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 32px;
+                }
+            }
+
+            a {
+                @include button(#121212, #fff);
+                margin: 0 auto;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 14px;
+                }
+            }
+
+            @media screen and (max-width: 1000px) {
+                margin-top: 70px;
+                margin-bottom: 70px;
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $dark-background;
+            padding: 40px 70px;
+
+            .logo {
+                filter: brightness(20%);
+            }
+
+            a {
+                text-decoration: none;
+                color: #2f2f2f;
+            }
+
+            @media screen and (max-width: 1000px) {
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noises - landing</title>
+    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <header class="container">
+        <nav>
+            <span class="logo">Noises</span>
+            <ul>
+                <li id="home_link">Home</li>
+                <li id="about_link">About</li>
+                <li id="features_link">Features</li>
+                <li id="join_link">Join us</li>
+            </ul>
+        </nav>
+        <div class="header-content" data-aos="zoom-in-up" data-aos-duration="1000">
+            <h1>New era of digital music</h1>
+            <p>Discover, share, and save music like never before. Join us in <br> revolutionizing the way you
+                experience
+                music.</p>
+            <div class="options">
+                <button>Learn more</button>
+                <a target="_blank"
+                    href="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fhfw3b5oqj3481.gif&rdt=48197">Visit
+                    app</a>
+            </div>
+        </div>
+    </header>
+    <section class="about container" data-aos="zoom-in-up" data-aos-duration="1000">
+        <h2>About us</h2>
+        <h3>We are creating a music web service</h3>
+        <p>
+            Our goal is to create a website for listening to music with a minimum threshold
+            for <br> entering and with the ability to not only download, but also upload your music.
+        </p>
+        <ul>
+            <li>
+                <img src="./assets/availability.svg" alt="#">
+                <span>Availability</span>
+            </li>
+            <li>
+                <img src="./assets/creativity.svg" alt="#">
+                <span>Creativity</span>
+            </li>
+            <li>
+                <img src="./assets/convenience.svg" alt="#">
+                <span>Convenience</span>
+            </li>
+            <li>
+                <img src="./assets/safety.svg" alt="#">
+                <span>Safety</span>
+            </li>
+        </ul>
+    </section>
+    <section class="features container">
+        <div class="feature-block" data-aos="flip-up" data-aos-duration="1300">
+            <img src="./assets/f1.png" alt="#">
+            <div class="feature-text">
+                <h2>Feature 01/05</h2>
+                <h3>Download music</h3>
+                <p>You can download your favorite music from Noises library without any subscription and spending money
+                </p>
+            </div>
+        </div>
+        <div class="feature-block" data-aos="flip-up" data-aos-duration="1300">
+            <img src="./assets/f2.png" alt="#">
+            <div class="feature-text">
+                <h2>Feature 02/05</h2>
+                <h3>Upload music</h3>
+                <p>Everyone can upload their music without partnership, like in social media</p>
+            </div>
+        </div>
+        <div class="feature-block" data-aos="flip-up" data-aos-duration="1300">
+            <img src="./assets/f3.png" alt="#">
+            <div class="feature-text">
+                <h2>Feature 03/05</h2>
+                <h3>Discover new Artists</h3>
+                <p>Thanks to openness and accessibility, you can find something new for yourself</p>
+            </div>
+        </div>
+        <div class="feature-block" data-aos="flip-up" data-aos-duration="1300">
+            <img src="./assets/f4.png" alt="#">
+            <div class="feature-text">
+                <h2>Feature 04/05</h2>
+                <h3>High-Quality Audio</h3>
+                <p>With modern technology, the music will be of high quality, with the ability to customize the sound.
+                </p>
+            </div>
+        </div>
+        <div class="feature-block" data-aos="flip-up" data-aos-duration="1300">
+            <img src="./assets/f5.png" alt="#">
+            <div class="feature-text">
+                <h2>Feature 05/05</h2>
+                <h3>Stream Unlimited Music</h3>
+                <p>Noises does not have any paid subscriptions that could spoil the experience of using this service.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="call-to-action container" data-aos="zoom-in-up" data-aos-duration="1000">
+            <h1>Join to the creative community of Noises</h1>
+            <a target="_blank"
+                href="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fhfw3b5oqj3481.gif&rdt=48197">Visit
+                app</a>
+        </div>
+        <nav>
+            <span class="logo">Noises</span>
+            <a target="_blank" href="https://github.com/hTKzmak">Made by Melnik</a>
+        </nav>
+    </footer>
+
+    <script>
+        const button = document.querySelector('.options').querySelector('button');
+        button.addEventListener('click', () => {
+            document.querySelector('.about').scrollIntoView(scrollSettings)
+        })
+        
+        const home_link = document.querySelector('#home_link');
+        const about_link = document.querySelector('#about_link');
+        const features_link = document.querySelector('#features_link');
+        const join_link = document.querySelector('#join_link');
+        
+        const scrollSettings = { behavior: "smooth", block: "start", inline: "start" }
+        
+        home_link.addEventListener('click', () => {
+            document.querySelector('header').scrollIntoView(scrollSettings)
+        })
+        
+        about_link.addEventListener('click', () => {
+            document.querySelector('.about').scrollIntoView(scrollSettings)
+        })
+
+        features_link.addEventListener('click', () => {
+            document.querySelector('.features').scrollIntoView(scrollSettings)
+        })
+        
+        join_link.addEventListener('click', () => {
+            document.querySelector('footer').scrollIntoView(scrollSettings)
+        })
+
+
+
+        AOS.init({
+            once: true
+        });
+    </script>
+</body>
+
+</html>
