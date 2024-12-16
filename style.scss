@@ -26,6 +26,11 @@ $grey-font-color: #6e6e6e;
     border: none;
 
     cursor: pointer;
+
+    @media screen and (max-width: 1000px) {
+        height: 45px;
+        width: 140px;
+    }
 }
 
 %text {
@@ -65,19 +70,20 @@ $grey-font-color: #6e6e6e;
         margin-bottom: 0;
         display: flex;
         gap: 70px;
-        
+
         li {
             color: $main-font-color50;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 17px;
+            user-select: none;
 
             cursor: pointer;
 
             &:hover {
                 color: $main-font-color;
             }
-            
+
             @media screen and (max-width: 1000px) {
                 font-size: 12px;
             }
@@ -107,6 +113,7 @@ body {
         font-weight: 500;
         font-size: 34px;
         text-transform: uppercase;
+        user-select: none;
     }
 
     header {
@@ -141,7 +148,7 @@ body {
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            min-height: 85vh;
+            min-height: 90vh;
 
             h1 {
                 font-size: 63px;
@@ -235,8 +242,9 @@ body {
             @media screen and (max-width: 1000px) {
                 flex-wrap: wrap;
                 width: auto;
-                gap: 15px;
+                gap: 25px;
                 margin-top: 50px;
+                justify-content: space-around;
             }
         }
     }
@@ -299,7 +307,8 @@ body {
                 margin-bottom: 55px;
 
                 @media screen and (max-width: 1000px) {
-                    font-size: 32px;
+                    font-size: 20px;
+                    margin-bottom: 25px;
                 }
             }
 
@@ -318,7 +327,7 @@ body {
             }
         }
 
-        nav {
+        .footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -327,15 +336,24 @@ body {
 
             .logo {
                 filter: brightness(20%);
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 25px;
+                }
             }
 
             a {
                 text-decoration: none;
                 color: #2f2f2f;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 12px;
+                }
             }
 
             @media screen and (max-width: 1000px) {
                 flex-direction: column;
+                padding: 20px;
             }
         }
     }

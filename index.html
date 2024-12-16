@@ -114,17 +114,14 @@
                 href="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fhfw3b5oqj3481.gif&rdt=48197">Visit
                 app</a>
         </div>
-        <nav>
+        <div class="footer">
             <span class="logo">Noises</span>
             <a target="_blank" href="https://github.com/hTKzmak">Made by Melnik</a>
-        </nav>
+        </div>
     </footer>
 
     <script>
         const button = document.querySelector('.options').querySelector('button');
-        button.addEventListener('click', () => {
-            document.querySelector('.about').scrollIntoView(scrollSettings)
-        })
         
         const home_link = document.querySelector('#home_link');
         const about_link = document.querySelector('#about_link');
@@ -132,13 +129,19 @@
         const join_link = document.querySelector('#join_link');
         
         const scrollSettings = { behavior: "smooth", block: "start", inline: "start" }
+        const scrollAboutSettings = { behavior: "smooth", block: "center", inline: "center" }
+
+        button.addEventListener('click', () => {
+            document.querySelector('.about').scrollIntoView(scrollAboutSettings)
+        })
+        
         
         home_link.addEventListener('click', () => {
             document.querySelector('header').scrollIntoView(scrollSettings)
         })
         
         about_link.addEventListener('click', () => {
-            document.querySelector('.about').scrollIntoView(scrollSettings)
+            document.querySelector('.about').scrollIntoView(scrollAboutSettings)
         })
 
         features_link.addEventListener('click', () => {

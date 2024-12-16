@@ -55,6 +55,9 @@ body header nav ul li {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 17px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 html header nav ul li:hover,
@@ -93,6 +96,9 @@ body .logo {
   font-weight: 500;
   font-size: 34px;
   text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 html header,
 body header {
@@ -126,7 +132,7 @@ body header .header-content {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  min-height: 85vh;
+  min-height: 90vh;
 }
 html header .header-content h1,
 body header .header-content h1 {
@@ -176,6 +182,13 @@ body header .header-content .options button {
   border: none;
   cursor: pointer;
 }
+@media screen and (max-width: 1000px) {
+  html header .header-content .options button,
+  body header .header-content .options button {
+    height: 45px;
+    width: 140px;
+  }
+}
 html header .header-content .options a,
 body header .header-content .options a {
   background-color: #121212;
@@ -190,6 +203,13 @@ body header .header-content .options a {
   border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  html header .header-content .options a,
+  body header .header-content .options a {
+    height: 45px;
+    width: 140px;
+  }
 }
 @media screen and (max-width: 1000px) {
   html header .header-content .options button,
@@ -254,8 +274,9 @@ body .about ul li span {
   body .about ul {
     flex-wrap: wrap;
     width: auto;
-    gap: 15px;
+    gap: 25px;
     margin-top: 50px;
+    justify-content: space-around;
   }
 }
 html .features,
@@ -326,7 +347,8 @@ body footer .call-to-action h1 {
 @media screen and (max-width: 1000px) {
   html footer .call-to-action h1,
   body footer .call-to-action h1 {
-    font-size: 32px;
+    font-size: 20px;
+    margin-bottom: 25px;
   }
 }
 html footer .call-to-action a,
@@ -348,6 +370,13 @@ body footer .call-to-action a {
 @media screen and (max-width: 1000px) {
   html footer .call-to-action a,
   body footer .call-to-action a {
+    height: 45px;
+    width: 140px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  html footer .call-to-action a,
+  body footer .call-to-action a {
     font-size: 14px;
   }
 }
@@ -358,26 +387,39 @@ body footer .call-to-action a {
     margin-bottom: 70px;
   }
 }
-html footer nav,
-body footer nav {
+html footer .footer,
+body footer .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #090909;
   padding: 40px 70px;
 }
-html footer nav .logo,
-body footer nav .logo {
+html footer .footer .logo,
+body footer .footer .logo {
   filter: brightness(20%);
 }
-html footer nav a,
-body footer nav a {
+@media screen and (max-width: 1000px) {
+  html footer .footer .logo,
+  body footer .footer .logo {
+    font-size: 25px;
+  }
+}
+html footer .footer a,
+body footer .footer a {
   text-decoration: none;
   color: #2f2f2f;
 }
 @media screen and (max-width: 1000px) {
-  html footer nav,
-  body footer nav {
+  html footer .footer a,
+  body footer .footer a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  html footer .footer,
+  body footer .footer {
     flex-direction: column;
+    padding: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
